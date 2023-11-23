@@ -1,0 +1,42 @@
+{
+    "name": "envoylope/amqp-symfony",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "src/bootstrap.php"
+        ],
+        "psr-4": {
+            "Envoylope\\NytrisPlugin\\Amqp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Envoylope\\NytrisPlugin\\Amqp\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.1",
+        "asmblah/php-amqp-compat": "^0.4",
+        "nytris/bundle": "^0.1",
+        "symfony/config": "^5.0",
+        "symfony/dependency-injection": "^5.0",
+        "symfony/yaml": "^5.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.6",
+        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan-mockery": "^1.1",
+        "phpstan/phpstan-symfony": "^1.3",
+        "phpunit/phpunit": "^10.2",
+        "symfony/framework-bundle": "^5.0",
+        "symfony/http-kernel": "^5.0",
+        "symfony/monolog-bundle": "^3.8"
+    },
+    "config": {
+        "platform": {
+            "php": "8.1"
+        },
+        "sort-packages": true
+    }
+}

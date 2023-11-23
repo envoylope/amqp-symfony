@@ -1,0 +1,9 @@
+framework:
+    test: true
+
+php_amqp_compat:
+    logger:
+        service: Envoylope\NytrisPlugin\Amqp\Tests\Functional\Util\TestLogger
+
+services:
+    Envoylope\NytrisPlugin\Amqp\Tests\Functional\Util\TestLogger: ~
