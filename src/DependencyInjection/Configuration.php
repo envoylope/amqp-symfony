@@ -28,6 +28,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
+        // Name must match alias generated from DI extension class PhpAmqpCompatExtension.
         $treeBuilder = new TreeBuilder('php_amqp_compat');
 
         $treeBuilder->getRootNode()
