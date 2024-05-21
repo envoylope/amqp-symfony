@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/envoylope/amqp-symfony/workflows/CI/badge.svg)](https://github.com/envoylope/amqp-symfony/actions?query=workflow%3ACI)
 
-Integrates [PHP AMQP-Compat][1] into a Symfony application.
+Integrates [PHP AMQP-Compat][PHP AMQP-Compat] into a Symfony application.
 
 ## Usage
 Install this package with Composer as a Nytris Symfony bundle plugin:
@@ -11,29 +11,20 @@ Install this package with Composer as a Nytris Symfony bundle plugin:
 $ composer install envoylope/amqp-symfony nytris/bundle
 ```
 
-### Configuring platform boot config
+### Configuring the bundle
 
-Once the Nytris package is configured, this plugin will be loaded:
+This plugin will be loaded automatically by [Nytris Bundle][Nytris Bundle].
 
-`nytris.config.php`
+`config/packages/amqp.yaml`:
 
-```php
-<?php
-
-declare(strict_types=1);
-
-use Envoylope\NytrisPlugin\Amqp\Plugin;
-use Nytris\Boot\BootConfig;
-use Nytris\Boot\PlatformConfig;
-
-$bootConfig = new BootConfig(new PlatformConfig(__DIR__ . '/var/cache/nytris/'));
-
-$bootConfig->installPackage(new Plugin([...]));
-
-return $bootConfig;
+```yaml
+php_amqp_compat:
+    logger:
+        channel: amqp_compat
 ```
 
 ## See also
-- [PHP AMQP-Compat][1], which is used by this library.
+- [PHP AMQP-Compat][PHP AMQP-Compat], which is used by this library.
 
-[1]: https://github.com/asmblah/php-amqp-compat
+[PHP AMQP-Compat]: https://github.com/asmblah/php-amqp-compat
+[Nytris Bundle]: https://github.com/nytris/bundle
